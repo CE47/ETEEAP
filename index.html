@@ -1,1 +1,1359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMA University ETEEAP Program - Earn Your Degree Through Experience</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* AMA University Color Scheme */
+            --ama-blue: #0033A0;
+            --ama-light-blue: #0072CE;
+            --ama-red: #E4002B;
+            --ama-white: #FFFFFF;
+            --ama-gray: #F5F7FA;
+            --ama-dark-gray: #333333;
+            --ama-light-gray: #6C757D;
+            
+            /* Spacing */
+            --section-padding: 5rem 1.5rem;
+            --container-max-width: 1200px;
+            --border-radius: 8px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--ama-dark-gray);
+            background-color: var(--ama-white);
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            color: var(--ama-blue);
+            font-weight: 700;
+            line-height: 1.3;
+        }
+        
+        h1 {
+            font-size: 2.8rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+        
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 0;
+            width: 80px;
+            height: 4px;
+            background-color: var(--ama-red);
+        }
+        
+        h3 {
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+        }
+        
+        .container {
+            max-width: var(--container-max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        .text-center h2:after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 14px 32px;
+            background-color: var(--ama-red);
+            color: var(--ama-white);
+            text-decoration: none;
+            border-radius: var(--border-radius);
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1rem;
+        }
+        
+        .btn:hover {
+            background-color: var(--ama-blue);
+            transform: translateY(-3px);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            border: 2px solid var(--ama-red);
+            color: var(--ama-red);
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--ama-red);
+            color: var(--ama-white);
+        }
+        
+        .btn-blue {
+            background-color: var(--ama-light-blue);
+        }
+        
+        .btn-blue:hover {
+            background-color: var(--ama-blue);
+        }
+        
+        /* Header Styles */
+        header {
+            background-color: var(--ama-white);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .logo {
+            height: 70px;
+            width: auto;
+        }
+        
+        .logo img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            margin: 0;
+            color: var(--ama-blue);
+        }
+        
+        .logo-text span {
+            font-size: 0.9rem;
+            color: var(--ama-light-blue);
+            font-weight: 500;
+        }
+        
+        .nav-desktop {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-desktop a {
+            text-decoration: none;
+            color: var(--ama-blue);
+            font-weight: 600;
+            font-size: 1rem;
+            transition: var(--transition);
+            padding: 0.5rem 0;
+            position: relative;
+        }
+        
+        .nav-desktop a:hover {
+            color: var(--ama-red);
+        }
+        
+        .nav-desktop a:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--ama-red);
+            transition: var(--transition);
+        }
+        
+        .nav-desktop a:hover:after {
+            width: 100%;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            font-size: 1.5rem;
+            color: var(--ama-blue);
+            cursor: pointer;
+        }
+        
+        .nav-mobile {
+            display: none;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 51, 160, 0.9), rgba(0, 114, 206, 0.9)), url('img/hero-bg.png');
+            background-size: cover;
+            background-position: center;
+            color: var(--ama-white);
+            padding: var(--section-padding);
+            min-height: 85vh;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero-content {
+            max-width: 800px;
+        }
+        
+        .hero h1 {
+            color: var(--ama-white);
+            font-size: 3.2rem;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+            max-width: 700px;
+        }
+        
+        .hero-btns {
+            display: flex;
+            gap: rem;
+            flex-wrap: wrap;
+        }
+        
+        .hero .btn {
+            margin-top: 1rem;
+        }
+        
+        /* Programs Section */
+        .programs {
+            padding: var(--section-padding);
+            background-color: var(--ama-gray);
+        }
+        
+        .program-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .program-card {
+            background-color: var(--ama-white);
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            height: 100%;
+        }
+        
+        .program-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .program-image {
+            height: 220px;
+            width: 100%;
+            background-color: #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ama-light-gray);
+            font-size: 1.2rem;
+            overflow: hidden;
+        }
+        
+        .program-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .program-content {
+            padding: 2rem;
+        }
+        
+        .program-content h3 {
+            color: var(--ama-blue);
+            margin-bottom: 1rem;
+        }
+        
+        .program-content ul {
+            list-style-position: inside;
+            margin: 1rem 0;
+            color: var(--ama-light-gray);
+        }
+        
+        .program-content li {
+            margin-bottom: 0.5rem;
+        }
+        
+        /* Eligibility Section */
+        .eligibility {
+            padding: var(--section-padding);
+        }
+        
+        .eligibility-layout {
+            display: grid;
+            grid-template-columns: 1fr 2fr;
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .eligibility-quiz-panel {
+            background-color: var(--ama-white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            border-left: 4px solid var(--ama-red);
+        }
+        
+        .eligibility-quiz-panel h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .quiz-step {
+            margin-bottom: 1.5rem;
+        }
+        
+        .quiz-step.hidden {
+            display: none;
+        }
+        
+        .quiz-step p {
+            margin-bottom: 0.5rem;
+        }
+        
+        .quiz-step .quiz-question {
+            font-size: 0.9rem;
+            color: var(--ama-light-gray);
+            margin-bottom: 1rem;
+        }
+        
+        .quiz-buttons {
+            display: flex;
+            gap: 0.5rem;
+        }
+        
+        .quiz-btn {
+            flex: 1;
+            padding: 0.75rem;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-weight: 600;
+            transition: var(--transition);
+        }
+        
+        .quiz-btn-yes {
+            background-color: var(--ama-dark-gray);
+            color: var(--ama-white);
+        }
+        
+        .quiz-btn-yes:hover {
+            background-color: var(--ama-blue);
+        }
+        
+        .quiz-btn-no {
+            background-color: var(--ama-gray);
+            color: var(--ama-dark-gray);
+        }
+        
+        .quiz-btn-no:hover {
+            background-color: #ddd;
+        }
+        
+        .quiz-result {
+            padding: 1rem;
+            border-radius: var(--border-radius);
+            margin-top: 1rem;
+        }
+        
+        .quiz-result.hidden {
+            display: none;
+        }
+        
+        .quiz-result.success {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        
+        .quiz-result.fail {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        
+        .quiz-result p:first-child {
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .quiz-result button {
+            margin-top: 0.5rem;
+            font-size: 0.85rem;
+            text-decoration: underline;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: inherit;
+        }
+        
+        .eligibility-docs-panel {
+            background-color: var(--ama-white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .eligibility-docs-panel h3 {
+            font-size: 1.2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .docs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 1rem;
+        }
+        
+        .doc-item {
+            display: flex;
+            align-items: flex-start;
+            padding: 1rem;
+            background-color: var(--ama-white);
+            border-radius: var(--border-radius);
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .doc-icon {
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .doc-content h4 {
+            font-size: 0.95rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            color: var(--ama-dark-gray);
+        }
+        
+        .doc-content p {
+            font-size: 0.85rem;
+            color: var(--ama-light-gray);
+            line-height: 1.4;
+        }
+        
+        @media (max-width: 992px) {
+            .eligibility-layout {
+                grid-template-columns: 1fr;
+            }
+            
+            .docs-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Process Section */
+        .process {
+            padding: var(--section-padding);
+            background-color: var(--ama-gray);
+        }
+        
+        .process-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+            margin-top: 3rem;
+            position: relative;
+        }
+        
+        .process-step {
+            display: flex;
+            align-items: flex-start;
+            gap: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-number {
+            background-color: var(--ama-red);
+            color: var(--ama-white);
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+        
+        .step-content {
+            background-color: var(--ama-white);
+            padding: 1.5rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            flex-grow: 1;
+        }
+        
+        /* Modalities Section */
+        .modalities {
+            padding: var(--section-padding);
+        }
+        
+        .modality-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .modality-card {
+            background-color: var(--ama-white);
+            border-radius: var(--border-radius);
+            padding: 2.5rem;
+            box-shadow: var(--box-shadow);
+            border-top: 5px solid var(--ama-light-blue);
+        }
+        
+        /* Financial Section */
+        .financial {
+            padding: var(--section-padding);
+            background-color: var(--ama-gray);
+        }
+        
+        .financial-highlights {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .financial-item {
+            background-color: var(--ama-white);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+        
+        .financial-item .amount {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--ama-red);
+            margin: 1rem 0;
+        }
+        
+        /* Contact Section */
+        .contact {
+            padding: var(--section-padding);
+        }
+        
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .contact-card {
+            background-color: var(--ama-gray);
+            padding: 2rem;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+        }
+        
+        .contact-card h3 {
+            color: var(--ama-blue);
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-card i {
+            color: var(--ama-light-blue);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--ama-blue);
+            color: var(--ama-white);
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h3 {
+            color: var(--ama-white);
+            margin-bottom: 1.5rem;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--ama-white);
+            padding-left: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: #ddd;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            h1 {
+                font-size: 2.5rem;
+            }
+            
+            h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+            
+            .program-cards {
+                grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .nav-desktop {
+                display: none;
+            }
+            
+            .nav-mobile {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: var(--ama-white);
+                padding: 6rem 2rem 2rem;
+                box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+                z-index: 998;
+                display: none;
+                flex-direction: column;
+                gap: 1.5rem;
+                overflow-y: auto;
+            }
+            
+            .nav-mobile.active {
+                display: flex;
+            }
+            
+            .nav-mobile a {
+                text-decoration: none;
+                color: var(--ama-blue);
+                font-weight: 600;
+                font-size: 1.2rem;
+                padding: 0.5rem 0;
+                border-bottom: 1px solid #eee;
+            }
+            
+            body.menu-open {
+                overflow: hidden;
+            }
+            
+            .container {
+                padding: 0 0.75rem;
+            }
+            
+            .programs .container,
+            .process .container {
+                padding: 0 0.5rem;
+            }
+            
+            .hero h1 {
+                font-size: 2.4rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .program-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            h1 {
+                font-size: 2.2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .section-padding {
+                padding: 4rem 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo-container">
+                <div class="logo">
+                    <!-- AMA University Logo Placeholder -->
+                    <div style="width: 70px; height: 70px; background-color: var(--ama-blue); color: white; display: flex; align-items: center; justify-content: center; font-weight: bold; border-radius: 8px;">AMA</div>
+                </div>
+                <div class="logo-text">
+                    <h1>AMA University</h1>
+                    <span>ETEEAP Program</span>
+                </div>
+            </div>
+            
+            <button class="mobile-menu-btn" id="mobileMenuBtn">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-desktop">
+                <a href="#home">Home</a>
+                <a href="#programs">Programs</a>
+                <a href="#eligibility">Eligibility</a>
+                <a href="#process">Process</a>
+                <a href="#modalities">Modalities</a>
+                <a href="#financial">Financial</a>
+                <a href="#contact">Contact</a>
+            </nav>
+        </div>
+        
+        <nav class="nav-mobile" id="navMobile">
+            <a href="#home">Home</a>
+            <a href="#programs">Programs</a>
+            <a href="#eligibility">Eligibility</a>
+            <a href="#process">Process</a>
+            <a href="#modalities">Modalities</a>
+            <a href="#financial">Financial</a>
+            <a href="#contact">Contact</a>
+        </nav>
+    </header>
 
+    <!-- Hero Section -->
+    <section class="hero" id="home">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Earn Your Bachelor's Degree Through Experience</h1>
+                <p>The AMA University ETEEAP program recognizes your professional expertise as academic credit. Transform years of industry experience into a recognized Bachelor's degree in Computer Science, Information Technology, or Business Administration.</p>
+                <div class="hero-btns">
+                    <a href="#programs" class="btn">Explore Programs</a> &nbsp
+                    <a href="#eligibility" class="btn btn-outline">Check Eligibility</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Section -->
+    <section class="programs" id="programs">
+        <div class="container">
+            <h2 class="text-center">ETEEAP Degree Programs</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 1rem; color: var(--ama-light-gray);">Choose from our three industry-leading programs designed to validate your professional experience with academic credentials.</p>
+            
+            <div class="program-cards">
+                <!-- BS Computer Science -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <!-- Image Placeholder for BS Computer Science -->
+                        <img src="img/bs-cs.png" alt="BS Computer Science">
+                    </div>
+                    <div class="program-content">
+                        <h3>BS Computer Science</h3>
+                        <p>Validate your expertise in software engineering, system architecture, and algorithmic development with a BSCS degree through ETEEAP.</p>
+                        <ul>
+                            <li>AI & Machine Learning Integration</li>
+                            <li>Software Engineering Standards</li>
+                            <li>Data Science & Analytics</li>
+                            <li>Blockchain Technology</li>
+                        </ul>
+                        <p><strong>Career Outcomes:</strong> Software Architect, AI Engineer, Data Scientist, Systems Analyst</p>
+                        <a href="#contact" class="btn btn-blue" style="margin-top: 1rem;">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- BS Information Technology -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <!-- Image Placeholder for BS Information Technology -->
+                        <img src="img/bs-it.png" alt="BS Information Technology">
+                    </div>
+                    <div class="program-content">
+                        <h3>BS Information Technology</h3>
+                        <p>Accredit your skills in network management, cybersecurity, cloud computing, and IT infrastructure with a BSIT degree.</p>
+                        <ul>
+                            <li>Cybersecurity & Defense</li>
+                            <li>Cloud Computing & AWS</li>
+                            <li>Network Administration</li>
+                            <li>Database Management</li>
+                        </ul>
+                        <p><strong>Career Outcomes:</strong> Cloud Solutions Architect, Cybersecurity Analyst, Network Engineer, IT Support Specialist</p>
+                        <a href="#contact" class="btn btn-blue" style="margin-top: 1rem;">Apply Now</a>
+                    </div>
+                </div>
+                
+                <!-- BS Business Administration -->
+                <div class="program-card">
+                    <div class="program-image">
+                        <!-- Image Placeholder for BS Business Administration -->
+                        <img src="img/bs-ba.png" alt="BS Business Administration">
+                    </div>
+                    <div class="program-content">
+                        <h3>BS Business Administration</h3>
+                        <p>Transform your management experience into a BSBA degree with specializations in Marketing, HR, MIS, or Financial Management.</p>
+                        <ul>
+                            <li>Marketing Management</li>
+                            <li>Human Resource Management</li>
+                            <li>Management Information Systems</li>
+                            <li>Financial Management</li>
+                        </ul>
+                        <p><strong>Career Outcomes:</strong> Brand Manager, HR Manager, IT Project Manager, Financial Analyst</p>
+                        <a href="#contact" class="btn btn-blue" style="margin-top: 1rem;">Apply Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Eligibility Section -->
+    <section class="eligibility" id="eligibility">
+        <div class="container">
+            <h2 class="text-center">Qualification Check</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 1rem; color: var(--ama-light-gray);">Strict requirements set by CHED ensure the integrity of the degree. Verify your eligibility before applying.</p>
+            
+            <div class="eligibility-layout">
+                <!-- Interactive Quiz Panel -->
+                <div class="eligibility-quiz-panel">
+                    <h3>Interactive Eligibility Quiz</h3>
+                    <div id="eligibility-quiz">
+                        <div class="quiz-step" data-step="1">
+                            <p style="font-weight: 600;">1. Nationality & Education</p>
+                            <p class="quiz-question">Are you a Filipino citizen with a High School Diploma or PEPT/ALS equivalent?</p>
+                            <div class="quiz-buttons">
+                                <button class="quiz-btn quiz-btn-yes" onclick="nextStep(1, true)">Yes</button>
+                                <button class="quiz-btn quiz-btn-no" onclick="nextStep(1, false)">No</button>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-step hidden" data-step="2">
+                            <p style="font-weight: 600;">2. Work Experience</p>
+                            <p class="quiz-question">Do you have at least 5 years of aggregate industry experience related to the degree you want?</p>
+                            <div class="quiz-buttons">
+                                <button class="quiz-btn quiz-btn-yes" onclick="nextStep(2, true)">Yes</button>
+                                <button class="quiz-btn quiz-btn-no" onclick="nextStep(2, false)">No</button>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-step hidden" data-step="3">
+                            <p style="font-weight: 600;">3. Age Requirement</p>
+                            <p class="quiz-question">Are you at least 23 years old (preferably 25)?</p>
+                            <div class="quiz-buttons">
+                                <button class="quiz-btn quiz-btn-yes" onclick="nextStep(3, true)">Yes</button>
+                                <button class="quiz-btn quiz-btn-no" onclick="nextStep(3, false)">No</button>
+                            </div>
+                        </div>
+                        
+                        <div id="quiz-result-success" class="quiz-result success hidden">
+                            <p>You are Eligible!</p>
+                            <p style="font-size: 0.9rem;">Prepare your documents listed on the right.</p>
+                        </div>
+                        
+                        <div id="quiz-result-fail" class="quiz-result fail hidden">
+                            <p>Eligibility Criteria Not Met</p>
+                            <p style="font-size: 0.9rem;">ETEEAP requires specific experience and age thresholds set by CHED.</p>
+                            <button onclick="resetQuiz()">Reset</button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Document Checklist Panel -->
+                <div class="eligibility-docs-panel">
+                    <h3>Mandatory Documentary Requirements</h3>
+                    <div class="docs-grid">
+                        <div class="doc-item">
+                            <div class="doc-icon">📜</div>
+                            <div class="doc-content">
+                                <h4>Certificate of Employment (COE)</h4>
+                                <p>Must include start/end dates. Critical: Must attach detailed <strong>Job Descriptions</strong> signed by HR/Supervisor.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="doc-item">
+                            <div class="doc-icon">🎓</div>
+                            <div class="doc-content">
+                                <h4>Transcript of Records (TOR)</h4>
+                                <p>Or Form 137 (High School) if no college units. Must be valid for transfer.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="doc-item">
+                            <div class="doc-icon">👶</div>
+                            <div class="doc-content">
+                                <h4>PSA Birth Certificate</h4>
+                                <p>Original copy from PSA.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="doc-item">
+                            <div class="doc-icon">📝</div>
+                            <div class="doc-content">
+                                <h4>Comprehensive Resume/CV</h4>
+                                <p>Detailed listing of functions, projects, and skills acquired over 5+ years.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="doc-item">
+                            <div class="doc-icon">💼</div>
+                            <div class="doc-content">
+                                <h4>Portfolio of Evidence</h4>
+                                <p>Certificates of training, project outputs, awards, business permits (if owner), etc.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="doc-item">
+                            <div class="doc-icon">🔍</div>
+                            <div class="doc-content">
+                                <h4>NBI Clearance</h4>
+                                <p>Valid clearance required for final admission.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process" id="process">
+        <div class="container">
+            <h2 class="text-center">The ETEEAP Process</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 1rem; color: var(--ama-light-gray);">A step-by-step journey to convert your professional experience into an accredited degree.</p>
+            <div style="max-width: 800px; margin: 2rem auto; border-radius: var(--border-radius); overflow: hidden; box-shadow: var(--box-shadow);"  class="program-image">
+                <!-- Image Placeholder for ETEEAP Process -->
+                <img src="img/eteeap.png" alt="ETEEAP Process">
+            </div>
+            <div class="process-steps">
+                <div class="process-step">
+                    <div class="step-number">1</div>
+                    <div class="step-content">
+                        <h3>Documentation & Application</h3>
+                        <p>Submit a comprehensive professional portfolio including Letter of Intent, detailed CV, Certificates of Employment, recommendation letters, and Prior Learning Sheet.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">2</div>
+                    <div class="step-content">
+                        <h3>Verification & Interview</h3>
+                        <p>Initial verification of documents followed by an orientation interview to assess professional maturity and authenticate submitted claims.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">3</div>
+                    <div class="step-content">
+                        <h3>Assessment & Proficiency Validation</h3>
+                        <p>Rigorous evaluation by a Panel of Assessors through written tests, oral defense, skills demonstration, and portfolio assessment.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">4</div>
+                    <div class="step-content">
+                        <h3>Deficiency Mapping & Enrollment</h3>
+                        <p>Receive a personalized curriculum showing accredited units and remaining "Enrichment Courses" to fill knowledge gaps.</p>
+                    </div>
+                </div>
+                
+                <div class="process-step">
+                    <div class="step-number">5</div>
+                    <div class="step-content">
+                        <h3>Final Evaluation & Degree Award</h3>
+                        <p>Complete supplementary courses and undergo final evaluation. ETEEAP Council recommends granting of the degree with same prestige as traditional 4-year degree.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modalities Section -->
+    <section class="modalities" id="modalities">
+        <div class="container">
+            <h2 class="text-center">Learning Modalities</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 1rem; color: var(--ama-light-gray);">Choose the learning format that fits your lifestyle and professional commitments.</p>
+            
+            <div class="modality-cards">
+                <div class="modality-card">
+                    <div style="height: 200px; width: 100%; background-color: #eee; border-radius: var(--border-radius); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--ama-light-gray);" class="program-image">
+                        <img src="img/distance-learning.png" alt="Distance Learning Visualization">
+                    </div>
+                    <h3>Distance Education Hybrid Model</h3>
+                    <p>Ideal for students near AMA campuses who want both in-person and virtual learning benefits.</p>
+                    <ul style="margin: 1.5rem 0; list-style-position: inside;">
+                        <li><strong>2 days/week</strong> on-campus for labs & consultations</li>
+                        <li><strong>3 days/week</strong> virtual classes via LMS</li>
+                        <li>Access to campus facilities & library</li>
+                        <li>Significant cost savings on commuting</li>
+                    </ul>
+                    <p>Perfect for professionals who can dedicate specific days for campus engagement.</p>
+                </div>
+                
+                <div class="modality-card">
+                    <div style="height: 200px; width: 100%; background-color: #eee; border-radius: var(--border-radius); margin-bottom: 1.5rem; display: flex; align-items: center; justify-content: center; color: var(--ama-light-gray);" class="program-image">
+                        <img src="img/online-learning.png" alt="Online Learning Visualization">
+                    </div>
+                    <h3>OEd Full Online Model</h3>
+                    <p>Total flexibility for OFWs and professionals with unpredictable schedules.</p>
+                    <ul style="margin: 1.5rem 0; list-style-position: inside;">
+                        <li><strong>24/7 learning access</strong> to all course materials</li>
+                        <li>Fully asynchronous schedule</li>
+                        <li>Advanced LMS with virtual simulations</li>
+                        <li>Global reach - study from anywhere</li>
+                    </ul>
+                    <p>AMA University is recognized as the first online ETEEAP school in the Philippines, serving candidates worldwide.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Financial Section -->
+    <section class="financial" id="financial">
+        <div class="container">
+            <h2 class="text-center">Financial Information</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 1rem; color: var(--ama-light-gray);">The ETEEAP pathway is significantly more cost-effective than traditional 4-year degrees.</p>
+            
+            <div class="financial-highlights">
+                <div class="financial-item">
+                    <h3>Traditional 4-Year Degree</h3>
+                    <p>Estimated total cost</p>
+                    <div class="amount">₱466K - ₱666K</div>
+                    <p>Private institution tuition</p>
+                </div>
+                
+                <div class="financial-item">
+                    <h3>ETEEAP Pathway</h3>
+                    <p>Estimated total cost</p>
+                    <div class="amount">₱76K - ₱150K</div>
+                    <p>Depending on accredited credits</p>
+                </div>
+                
+                <div class="financial-item">
+                    <h3>AMA University Discount</h3>
+                    <p>Sapphire Anniversary</p>
+                    <div class="amount">45% OFF</div>
+                    <p>On tuition & laboratory fees</p>
+                </div>
+                
+                <div class="financial-item">
+                    <h3>Government Support</h3>
+                    <p>RA 10931 Coverage</p>
+                    <div class="amount">Scholarships</div>
+                    <p>Universal Access to Quality Tertiary Education</p>
+                </div>
+            </div>
+            
+            <div style="background-color: var(--ama-white); padding: 2rem; border-radius: var(--border-radius); margin-top: 3rem; box-shadow: var(--box-shadow);">
+                <h3 style="text-align: center; margin-bottom: 1.5rem;">Sample Fee Breakdown</h3>
+                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1rem;">
+                    <div>
+                        <p><strong>Application/Evaluation Fee:</strong> ₱500 - ₱1,000</p>
+                        <p><strong>Assessment/Equivalency Fee:</strong> ₱25,000 - ₱30,000</p>
+                    </div>
+                    <div>
+                        <p><strong>Tuition per Unit:</strong> ~₱1,000</p>
+                        <p><strong>Miscellaneous/LMS Fees:</strong> ₱2,000 - ₱5,000/semester</p>
+                    </div>
+                    <div>
+                        <p><strong>Graduation Fee:</strong> ₱5,000 - ₱10,000</p>
+                        <p><strong>Payment Methods:</strong> DragonPay, GCash, GrabPay, OTC</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact" id="contact">
+        <div class="container">
+            <h2 class="text-center">Contact AMA University</h2>
+            <p class="text-center" style="max-width: 800px; margin: 0 auto 1rem; color: var(--ama-light-gray);">Connect with our authorized ETEEAP representatives for inquiries and applications.</p>
+            
+            <div class="contact-info">
+                <div class="contact-card">
+                    <h3><i class="fas fa-map-marker-alt"></i> Main Campus</h3>
+                    <p>Maximina St., Villa Arca Subdivision, Project 8, Quezon City</p>
+                    <p style="margin-top: 1rem;"><strong>AMAES Head Office:</strong> 8656-0654 / 8844-3225</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fas fa-phone"></i> Contact Numbers</h3>
+                    <p><strong>General Inquiries:</strong></p>
+                    <p>0928 335 6732 / 0915 841 9289</p>
+                    <p style="margin-top: 1rem;"><strong>Central Registrar (Credentials):</strong></p>
+                    <p>acr.records@amaes.edu.ph</p>
+                    <p>0969 0384 116</p>
+                </div>
+                
+                <div class="contact-card">
+                    <h3><i class="fas fa-globe"></i> International & Online</h3>
+                    <p><strong>International Admissions:</strong></p>
+                    <p>ambrodriguez@amaes.edu.ph</p>
+                    <p style="margin-top: 1rem;"><strong>Online Education (OEd):</strong></p>
+                    <p>First online ETEEAP school in the Philippines</p>
+                    <p>24/7 learning access worldwide</p>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <h3>Ready to Transform Your Experience into a Degree?</h3>
+                <p style="margin: 1.5rem 0; color: var(--ama-light-gray);">Begin your ETEEAP journey with AMA University, the pioneer in IT education and online learning in the Philippines.</p>
+                <a href="#contact" class="btn" style="font-size: 1.1rem; padding: 16px 40px;">Start Your Application Today</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>AMA University ETEEAP</h3>
+                    <p>Transforming professional experience into academic credentials since 1996. The first and most comprehensive ETEEAP program in the Philippines.</p>
+                    <p style="margin-top: 1rem;"><em>"Choose to be the Best"</em></p>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul class="footer-links">
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#programs">Programs</a></li>
+                        <li><a href="#eligibility">Eligibility</a></li>
+                        <li><a href="#process">ETEEAP Process</a></li>
+                        <li><a href="#financial">Tuition & Fees</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Legal Framework</h3>
+                    <ul class="footer-links">
+                        <li><a href="#">Executive Order No. 330 (1996)</a></li>
+                        <li><a href="#">Republic Act No. 12124 (2025)</a></li>
+                        <li><a href="#">CHED CMO No. 29, s. 2021</a></li>
+                        <li><a href="#">RA 10931 (Free Tuition)</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h3>Global Partners</h3>
+                    <p>Microsoft Premier Education Partner</p>
+                    <p>Cisco Academy (Largest Worldwide)</p>
+                    <p>AWS Cloud Partner (Largest in Asia)</p>
+                    <p>Oracle Strategic Technology Partner</p>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2025 AMA University ETEEAP Program. All Rights Reserved.</p>
+                <p style="margin-top: 0.5rem;">AMA University is a CHED-recognized Center of Development in Information Technology and ISO 9001:2008 Certified.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile Menu Toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const navMobile = document.getElementById('navMobile');
+        const body = document.body;
+        
+        function toggleMobileMenu() {
+            navMobile.classList.toggle('active');
+            body.classList.toggle('menu-open');
+            
+            const icon = mobileMenuBtn.querySelector('i');
+            if (navMobile.classList.contains('active')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+            } else {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+            }
+        }
+        
+        function closeMobileMenu() {
+            navMobile.classList.remove('active');
+            body.classList.remove('menu-open');
+            mobileMenuBtn.querySelector('i').classList.remove('fa-times');
+            mobileMenuBtn.querySelector('i').classList.add('fa-bars');
+        }
+        
+        mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-mobile a').forEach(link => {
+            link.addEventListener('click', closeMobileMenu);
+        });
+        
+        // Close mobile menu when clicking outside
+        navMobile.addEventListener('click', function(e) {
+            if (e.target === navMobile) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Close menu on escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && navMobile.classList.contains('active')) {
+                closeMobileMenu();
+            }
+        });
+        
+        // Eligibility Quiz Functions
+        function nextStep(currentStep, answer) {
+            if (!answer) {
+                // Show fail result
+                document.querySelectorAll('.quiz-step').forEach(step => step.classList.add('hidden'));
+                document.getElementById('quiz-result-fail').classList.remove('hidden');
+                return;
+            }
+            
+            // Hide current step
+            document.querySelector(`.quiz-step[data-step="${currentStep}"]`).classList.add('hidden');
+            
+            // Show next step or result
+            if (currentStep < 3) {
+                document.querySelector(`.quiz-step[data-step="${currentStep + 1}"]`).classList.remove('hidden');
+            } else {
+                // All steps passed
+                document.getElementById('quiz-result-success').classList.remove('hidden');
+            }
+        }
+        
+        function resetQuiz() {
+            // Hide all results
+            document.getElementById('quiz-result-success').classList.add('hidden');
+            document.getElementById('quiz-result-fail').classList.add('hidden');
+            
+            // Hide all steps except first
+            document.querySelectorAll('.quiz-step').forEach((step, index) => {
+                if (index === 0) {
+                    step.classList.remove('hidden');
+                } else {
+                    step.classList.add('hidden');
+                }
+            });
+        }
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const header = document.querySelector('header');
+                    const headerHeight = header.offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add scroll effect to header
+        window.addEventListener('scroll', function() {
+            const header = document.querySelector('header');
+            if (window.scrollY > 100) {
+                header.style.boxShadow = '0 10px 30px rgba(0, 0, 0, 0.1)';
+            } else {
+                header.style.boxShadow = '0 5px 20px rgba(0, 0, 0, 0.05)';
+            }
+        });
+    </script>
+</body>
+</html>
